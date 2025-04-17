@@ -1,4 +1,17 @@
 <?php
+
+$data = [1, 2, 3, 4, 5];
+$evenNumbers = [];
+
+for ($i = 0; $i < count($data); $i++) {
+
+    if ($data[$i] % 2 == 0) {
+        $evenNumbers[] = $data[$i];
+    }
+}
+
+echo "Even numbers: " . implode(", ", $evenNumbers) . "\n";
+// phpinfo();
 try {
     $pdo = new PDO("pgsql:host=postgres_db;port=5432;dbname=bookmark", "user", "password");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
